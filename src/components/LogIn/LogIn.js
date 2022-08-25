@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import {
+  useSignInWithEmailAndPassword,
   useSignInWithFacebook,
   useSignInWithGithub,
   useSignInWithGoogle,
@@ -16,31 +17,33 @@ const LogIn = () => {
   const [signInWithGithub, gUser, gLoading, gError] = useSignInWithGithub(auth);
   const [signInWithFacebook, fUser, fLoading, fError] =
     useSignInWithFacebook(auth);
+  const [signInWithEmailAndPassword, lUser, lLoading, lError] =
+    useSignInWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading || gLoading || fLoading) {
-      return <Loading />;
-    }
-  }, [loading, gLoading, fLoading]);
-
-  useEffect(() => {
-    if (user || gUser || fUser) {
+    if (user || gUser || fUser || lUser) {
       return navigate("/", { replace: true });
     }
-  }, [user, gUser, fUser, navigate]);
+  }, [user, gUser, fUser, lUser, navigate]);
 
-  useEffect(() => {
-    if (error || gError || fError) {
-      toast.error(error.message || gError.message || fError.message, {
-        id: "logIn-error",
-      });
-    }
-  }, [error, gError, fError]);
+  if (loading || gLoading || fLoading || lLoading) {
+    return <Loading />;
+  }
+
+  if (error || gError || fError || lError) {
+    toast.error(error.message || gError.message || fError.message || lError.message, {
+      id: "logIn-error",
+    });
+  }
 
   const handleLogIn = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInWithEmailAndPassword(email, password);
   };
 
   // Github, Google, Facebook, and Email + password SignIn end
@@ -77,7 +80,6 @@ const LogIn = () => {
               required
               type="email"
               name="email"
-              id="email"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
             />
@@ -90,7 +92,6 @@ const LogIn = () => {
               required
               type="password"
               name="password"
-              id="password"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
             />

@@ -13,6 +13,7 @@ if(loading) {
 }
 
 console.log(user);
+
   const navLink = (
     <>
       <li>
