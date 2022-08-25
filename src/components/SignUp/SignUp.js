@@ -1,15 +1,29 @@
 import React from "react";
+import auth from "../../firebase.init";
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
 
 const SignUp = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, gUser, gLoading, gError] = useSignInWithGithub(auth);
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    console.log(name);
+  }
+  
   return (
     <div class="card w-96 bg-white mx-auto p-5 mt-5 shadow-xl">
       <h3 className="text-2xl text-center">Create New Account!</h3>
       <div className="mx-auto mt-4">
         <i
+        onClick={() => signInWithGoogle()}
           title="Continue With Google"
           class="fa-brands text-5xl mr-3 text-green-600 fa-google cursor-pointer"
         ></i>
         <i
+        onClick={() => signInWithGithub()}
           title="Continue With Github"
           class="fa-brands text-5xl mr-3 fa-square-github cursor-pointer"
         ></i>
@@ -19,7 +33,7 @@ const SignUp = () => {
         ></i>
       </div>
       <div class="card-body">
-        <form action="">
+        <form onSubmit={handleSignUp} >
           <div class="form-control w-full max-w-xs">
             <label class="label">
               <span class="label-text">Name</span>
