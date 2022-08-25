@@ -1,12 +1,14 @@
 import React from "react";
+import Banner from "../Banner/Banner";
 import Footer from "../Footer/Footer";
+import Services from "../Services/Services";
 
 const Home = () => {
   return (
     <div>
-      <h1 className="text-3xl">This is home page.</h1>
-
-      <Footer/>
+      <Banner />
+      <Services />
+      <Footer />
     </div>
   );
 };
