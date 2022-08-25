@@ -59,7 +59,7 @@ const Services = () => {
     },
   ];
 
-  const [quantity, setQuantity] = useState(10)
+  const [quantity, setQuantity] = useState(10);
 
   return (
     <div>
@@ -68,7 +68,7 @@ const Services = () => {
           type="search"
           name="search"
           id="search"
-          className="outline-none pl-3 font-bolder text-gray-900  w-[90%] md:w-96"
+          className="outline-none pl-3 font-bolder  w-[90%] md:w-96"
         />
         <button className="btn outline-none">Search</button>
       </div>
@@ -77,11 +77,15 @@ const Services = () => {
           books.map((book) => (
             <article
               to={`services/${book.id}`}
-              className=" grid gap-2 grid-cols-2 shadow-lg p-5 rounded-md border-2 "
+              className="cursor-pointer shadow-slate-400 hover:border-green-600 grid gap-2 grid-cols-2 shadow-lg p-5 rounded-md border-2 "
               key={book.id}
             >
               <div>
-                <img className="rounded-sm h-64" src={book.image} alt={book.name} />
+                <img
+                  className="rounded-sm h-[270px]"
+                  src={book.image}
+                  alt={book.name}
+                />
               </div>
               <div>
                 <h3 className="text-xl font-extrabold text-gray-900">
@@ -95,10 +99,21 @@ const Services = () => {
                   $ {book.price}
                 </p>
 
-                <input value={quantity} className="pl-2 border-2 border-green-500 my-2 rounded-md w-[100px] block outline-none" type="number" name="quantity" id="quantity-input" />
-                <button className="btn btn-sm mb-2 mr-5 inline-block"><i class="fa-solid fa-circle-minus"></i></button>
-                <button className="btn btn-sm "><i class="fa-solid fa-circle-plus"></i></button>
-                <button className="btn btn-sm block">Add To Cart</button>
+                <input
+                  value={quantity}
+                  className="pl-2 border-2 border-green-500 my-2 rounded-md w-[100px] block outline-none"
+                  type="number"
+                  name="quantity"
+                  id="quantity-input"
+                />
+                <button className="btn btn-sm mb-2 mr-5 inline-block">
+                  <i class="fa-solid fa-circle-minus"></i>
+                </button>
+                <button className="btn btn-sm ">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </button>
+                <button className="btn btn-sm  block">Add To Cart <i class="fa-solid ml-1 fa-cart-arrow-down"></i></button>
+                <Link className="bg-gray-700 uppercase rounded-md py-2 px-5 mt-2 block w-[fit-content]" to={`/services/${book.id}`}>See More <i class="fa-solid ml-1 fa-arrow-right"></i></Link>
               </div>
             </article>
           ))}
