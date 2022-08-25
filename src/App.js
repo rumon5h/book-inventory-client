@@ -4,6 +4,8 @@ import Home from "./components/Home/Home";
 import LogIn from "./components/LogIn/LogIn";
 import Navbar from "./components/Navbar/Navbar";
 import SignUp from "./components/SignUp/SignUp";
+import  { Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/log-in" element={<LogIn/>}></Route>
         <Route path="*" element={<Error/>}></Route>
       </Routes>
+      <Toaster/>
     </div>
   );
 }
