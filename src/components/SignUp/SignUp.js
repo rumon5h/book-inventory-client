@@ -38,10 +38,10 @@ const SignUp = () => {
   if (error || gError || fError || cError || uError) {
     toast.error(
       error.message ||
-        gError.message ||
-        fError.message ||
-        cError.message ||
-        uError.message,
+        gError?.message ||
+        fError?.message ||
+        cError?.message ||
+        uError?.message,
       {
         id: "signUp-error",
       }

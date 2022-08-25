@@ -33,7 +33,7 @@ const LogIn = () => {
   }
 
   if (error || gError || fError || lError) {
-    toast.error(error.message || gError.message || fError.message || lError.message, {
+    toast.error(error?.message || gError?.message || fError?.message || lError?.message, {
       id: "logIn-error",
     });
   }
