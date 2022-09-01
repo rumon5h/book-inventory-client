@@ -100,20 +100,20 @@ const Services = () => {
                 </p>
 
                 <input
-                  value={quantity}
+                  defaultValue={quantity}
                   className="pl-2 border-2 border-green-500 my-2 rounded-md w-[100px] block outline-none"
                   type="number"
                   name="quantity"
                   id="quantity-input"
                 />
                 <button className="btn btn-sm mb-2 mr-5 inline-block">
-                  <i class="fa-solid fa-circle-minus"></i>
+                  <i className="fa-solid fa-circle-minus"></i>
                 </button>
                 <button className="btn btn-sm ">
-                  <i class="fa-solid fa-circle-plus"></i>
+                  <i className="fa-solid fa-circle-plus"></i>
                 </button>
-                <button className="btn btn-sm  block">Add To Cart <i class="fa-solid ml-1 fa-cart-arrow-down"></i></button>
-                <Link className="bg-gray-700 uppercase rounded-md py-2 px-5 mt-2 block w-[fit-content]" to={`/services/${book.id}`}>See More <i class="fa-solid ml-1 fa-arrow-right"></i></Link>
+                <button className="btn btn-sm  block">Add To Cart <i className="fa-solid ml-1 fa-cart-arrow-down"></i></button>
+                <Link className="bg-gray-700 uppercase rounded-md py-2 px-5 mt-2 block w-[fit-content]" to={`/books/${book.id}`}>See Details <i className="fa-solid ml-1 fa-arrow-right"></i></Link>
               </div>
             </article>
           ))}

@@ -5,6 +5,8 @@ import LogIn from "./components/LogIn/LogIn";
 import Navbar from "./components/Navbar/Navbar";
 import SignUp from "./components/SignUp/SignUp";
 import  { Toaster } from 'react-hot-toast';
+import Services from "./components/Services/Services";
+import Service from "./components/Service/Service";
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
+        <Route path="/books" element={<Services/>}></Route>
+        <Route path="/books/:id" element={<Service/>}></Route>
         <Route path="/sign-up" element={<SignUp/>}></Route>
         <Route path="/log-in" element={<LogIn/>}></Route>
         <Route path="*" element={<Error/>}></Route>
