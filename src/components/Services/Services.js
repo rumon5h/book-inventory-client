@@ -63,7 +63,7 @@ const Services = () => {
 
   return (
     <div>
-      <div className="border-2 border-gray-900 rounded-md mx-auto w-[fit-content] mb-10">
+      <div className="border-2 border-gray-900 rounded-[10px] mx-auto w-[fit-content] mb-10">
         <input
           type="search"
           name="search"
