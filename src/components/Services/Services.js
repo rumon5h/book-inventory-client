@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useBooks from "../../hooks/useBooks";
 import heartStopper from "../images/Heartstopper.jpeg";
 import myKillerVacation from "../images/My Killer Vacation.jpeg";
 import nickAndCharlie from "../images/Nick and Charlie.jpeg";
@@ -8,58 +9,9 @@ import termsAndConditions from "../images/Terms and Conditions.jpeg";
 import theFinePrint from "../images/The Fine Print.jpeg";
 
 const Services = () => {
-  const books = [
-    {
-      id: 1,
-      name: "Heartstopper",
-      image: heartStopper,
-      price: 25,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-    {
-      id: 2,
-      name: "My Killer Vacation",
-      image: myKillerVacation,
-      price: 30,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-    {
-      id: 3,
-      name: "Nick and Charlie",
-      image: nickAndCharlie,
-      price: 12,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-    {
-      id: 4,
-      name: "Pack Up the Moon",
-      image: packUpTheMoon,
-      price: 17,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-    {
-      id: 5,
-      name: "Terms and Conditions",
-      image: termsAndConditions,
-      price: 21,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-    {
-      id: 6,
-      name: "The Fine Print",
-      image: theFinePrint,
-      price: 25,
-      author: "Kristan Higgins",
-      available: 200,
-    },
-  ];
 
-  const [quantity, setQuantity] = useState(10);
+  const [books, setBooks] = useBooks();
+console.log(books);
 
   return (
     <div>
@@ -74,11 +26,11 @@ const Services = () => {
       </div>
       <div className="grid m-5 gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {books &&
-          books.map((book) => (
+          books?.map(book => (
             <article
-              to={`services/${book.id}`}
+            key={book._id}
+              to={`services/${book._id}`}
               className="cursor-pointer shadow-slate-400 hover:border-green-600 grid gap-2 grid-cols-2 shadow-lg p-5 rounded-md border-2 "
-              key={book.id}
             >
               <div>
                 <img
@@ -100,7 +52,7 @@ const Services = () => {
                 </p>
 
                 <input
-                  defaultValue={quantity}
+                  defaultValue={1}
                   className="pl-2 border-2 border-green-500 my-2 rounded-md w-[100px] block outline-none"
                   type="number"
                   name="quantity"
