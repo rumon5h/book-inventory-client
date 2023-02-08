@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useBooks from "../../hooks/useBooks";
-import heartStopper from "../images/Heartstopper.jpeg";
-import myKillerVacation from "../images/My Killer Vacation.jpeg";
-import nickAndCharlie from "../images/Nick and Charlie.jpeg";
-import packUpTheMoon from "../images/Pack Up the Moon.jpeg";
-import termsAndConditions from "../images/Terms and Conditions.jpeg";
-import theFinePrint from "../images/The Fine Print.jpeg";
 
 const Services = () => {
 

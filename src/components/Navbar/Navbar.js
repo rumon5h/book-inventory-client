@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className='sticky z-10 top-0'>
             <section className="top-nav">      
                 <Link to='/'>
-                    Book Inventory
+                    Book World
                 </Link>
                 <input id="menu-toggle" type="checkbox" />
                 <label className='menu-button-container' htmlFor="menu-toggle">
