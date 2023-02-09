@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import Error from "./components/Error/Error";
 import Home from "./components/Home/Home";
@@ -7,6 +8,7 @@ import SignUp from "./components/SignUp/SignUp";
 import  { Toaster } from 'react-hot-toast';
 import Services from "./components/Services/Services";
 import Service from "./components/Service/Service";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
-        <Route path="/books" element={<Services/>}></Route>
+        <Route path="/books" element={<PrivateRoute><Services/></PrivateRoute>}></Route>
         <Route path="/books/:id" element={<Service/>}></Route>
         <Route path="/sign-up" element={<SignUp/>}></Route>
         <Route path="/log-in" element={<LogIn/>}></Route>
