@@ -4,7 +4,7 @@ const useBooks = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/books')
+        fetch('https://books-rhrr.onrender.com/api/v1/books')
         .then(res => res.json())
         .then(data => setBooks(data.data))
     },[])

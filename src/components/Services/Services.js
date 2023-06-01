@@ -1,29 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import useBooks from "../../hooks/useBooks";
+import Loading from "../Loading/Loading";
 
 const Services = () => {
 
   const [books, setBooks] = useBooks();
-console.log(books);
+
+  if(!books){
+    return <Loading/>;
+  }
 
   return (
     <div>
-      <div className="border-2 border-gray-900 rounded-[10px] mx-auto w-[fit-content] mb-10">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          className="outline-none pl-3 font-bolder  w-[90%] md:w-96"
-        />
-        <button className="btn outline-none">Search</button>
-      </div>
+      
       <div className="grid m-5 gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {books &&
-          books?.map(book => (
-            <article
+          books?.slice(0,6).map(book => (
+            <article data-aos="zoom-in-up"
             key={book._id}
-              to={`services/${book._id}`}
+              to={`services/${book._id}`} 
               className="cursor-pointer shadow-slate-400 hover:border-green-600 grid gap-2 grid-cols-2 shadow-lg p-5 rounded-md border-2 "
             >
               <div>

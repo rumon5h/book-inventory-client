@@ -5,11 +5,14 @@ const Banner = () => {
     <div className="hero min-h-screen bg-white">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
+        
           src="https://i.ibb.co/Tg8xBdG/banner.png"
           className="w-full rounded-lg shadow-2xl"
           alt=""
         />
-        <div className="w-full text-gray-900">
+        <div
+        
+        className="w-full text-gray-900">
           <h1 className="text-5xl font-bold">
             Proud Independent Booksellers Since 1999!
           </h1>
