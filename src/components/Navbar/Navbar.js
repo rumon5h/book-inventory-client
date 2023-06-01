@@ -26,9 +26,10 @@ const Navbar = () => {
                 <div className="menu">
                     <Link to="/home">Home</Link>
                     <Link to="/books">Books</Link>
-                    <Link to="/my-books">My Books</Link>
-                    <Link to="/add-book">Add Book</Link>
-                    <Link to="/manage-books">Manage Books </Link>
+                    {
+                      user?.uid && <Link to="/dashboard">Dashboard</Link>
+                    }
+
                    {
                     user?.uid ?  <Link onClick={() => signOut(auth)} className="" to="/log-in">
                     LogOut
