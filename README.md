@@ -18,3 +18,4 @@ In the project directory, you can run:
 * React Router dom
 * Firebase
 * React firebase hook
+* AOS Animation
