@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='sticky z-10 top-0'>
+    <div className='sticky z-50 top-0'>
             <section className="top-nav">      
                 <Link to='/'>
                     Book World

@@ -9,7 +9,7 @@ const Services = () => {
     useEffect(() => {
         fetch('https://books-rhrr.onrender.com/api/v1/books')
         .then(res => res.json())
-        .then(data => setBooks(data.data))
+        .then(data => setBooks(data?.data))
     },[])
     
 
