@@ -16,6 +16,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import MyBooks from "./components/Dashboard/MyBooks";
 import FavoriteBooks from "./components/Dashboard/FavoriteBooks";
 import Profile from "./components/Dashboard/Profile";
+import AddBook from "./components/Dashboard/AddBook";
 // ..
 AOS.init({ duration: 2000 });
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/dashboard/mybooks" index element={<MyBooks></MyBooks>} ></Route>
           <Route path="/dashboard/favorite" element={<FavoriteBooks></FavoriteBooks>} ></Route>
           <Route path="/dashboard/profile" element={<Profile></Profile>} ></Route>
+          <Route path="/dashboard/add-book" element={<AddBook/>} ></Route>
         </Route>
 
         <Route path="*" element={<Error />}></Route>

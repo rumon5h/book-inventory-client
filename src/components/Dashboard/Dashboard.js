@@ -35,6 +35,11 @@ const Dashboard = () => {
             <Link to="/dashboard/favorite">Favorite Books</Link>
           </li>
           }
+            {
+            user?.uid && <li>
+            <Link to="/dashboard/add-book">Add Book</Link>
+          </li>
+          }
         </ul>
       </div>
     </div>
